@@ -1,3 +1,10 @@
+"""
+Word Counter Web Application
+---------------------------
+A Flask-based web application that provides real-time word counting functionality
+with support for light/dark themes and error handling.
+"""
+
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
@@ -11,6 +18,11 @@ def count_words(text):
         
     Returns:
         int: Number of words in the text
+        
+    Note:
+        - Handles empty input and whitespace
+        - Filters out pure punctuation
+        - Considers hyphenated words as single words
     """
     # Handle empty or whitespace-only input
     if not text or text.isspace():
@@ -33,7 +45,15 @@ def home():
 def count():
     """
     Handle word counting requests from the frontend.
-    Returns JSON response with word count.
+    
+    Expects:
+        JSON payload with 'text' field
+    
+    Returns:
+        JSON response with:
+        - count: number of words
+        - status: 'success' or 'error'
+        - error: error message (if applicable)
     """
     try:
         text = request.json.get('text', '')

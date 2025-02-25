@@ -5,6 +5,13 @@ A modern web application for real-time word counting with a clean, responsive in
 ## Overview
 This application provides an efficient solution for counting words in text, featuring real-time updates and a user-friendly interface. Built with modern web technologies, it offers reliable word counting capabilities for various text inputs.
 
+## Preview
+![Light Theme]
+*Light theme with word counting interface*
+
+![Dark Theme]
+*Dark theme showcasing the responsive design*
+
 ## Features
 - ⚡ Real-time word counting
 - 🎨 Modern, responsive interface
@@ -16,7 +23,7 @@ This application provides an efficient solution for counting words in text, feat
 
 1. Clone the repository
 ```bash
-git clone https://github.com/Sanju/word-counter.git
+git clone https://github.com/Sanjeeviraju/word-counter
 cd word-counter
 ```
 

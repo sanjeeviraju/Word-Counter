@@ -1,7 +1,18 @@
-// Add event listener for real-time counting
+/**
+ * Word Counter JavaScript Module
+ * ----------------------------
+ * Handles real-time word counting, theme switching, and API communication
+ */
+
+// Initialize real-time counting with debouncing
 document.getElementById('text-input').addEventListener('input', debounce(countWords, 300));
 
-// Debounce function to limit API calls
+/**
+ * Debounce function to limit API calls
+ * @param {Function} func - Function to debounce
+ * @param {number} wait - Milliseconds to wait
+ * @returns {Function} Debounced function
+ */
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -13,6 +24,12 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
+
+/**
+ * Theme Management
+ * --------------
+ * Handles theme switching and persistence
+ */
 
 // Theme toggle functionality
 const themeToggle = document.getElementById('theme-toggle');
@@ -35,6 +52,12 @@ themeToggle.addEventListener('click', () => {
 function updateThemeIcon(theme) {
     themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
 }
+
+/**
+ * Word Counting Logic
+ * -----------------
+ * Handles API communication and result display
+ */
 
 async function countWords() {
     const textInput = document.getElementById('text-input').value;
