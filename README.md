@@ -7,9 +7,11 @@ This application provides an efficient solution for counting words in text, feat
 
 ## Preview
 ![Light Theme]
+![image](https://github.com/user-attachments/assets/44c5fe89-5ff8-48bd-bec1-ef40574993a5)
 *Light theme with word counting interface*
 
 ![Dark Theme]
+![image](https://github.com/user-attachments/assets/beed1c41-9937-45a6-97d0-dd3c93d16fc2)
 *Dark theme showcasing the responsive design*
 
 ## Features
