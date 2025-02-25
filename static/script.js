@@ -14,6 +14,28 @@ function debounce(func, wait) {
     };
 }
 
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Load saved theme
+const savedTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', savedTheme);
+updateThemeIcon(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+});
+
+function updateThemeIcon(theme) {
+    themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+}
+
 async function countWords() {
     const textInput = document.getElementById('text-input').value;
     const resultElement = document.getElementById('word-count');
@@ -31,14 +53,14 @@ async function countWords() {
         
         if (data.status === 'success') {
             resultElement.textContent = data.count;
-            resultElement.style.color = '#333';
+            resultElement.style.color = 'var(--text-color)';
         } else {
             resultElement.textContent = 'Error';
-            resultElement.style.color = 'red';
+            resultElement.style.color = '#ff4444';
         }
     } catch (error) {
         resultElement.textContent = 'Error';
-        resultElement.style.color = 'red';
+        resultElement.style.color = '#ff4444';
         console.error('Error:', error);
     }
 }
