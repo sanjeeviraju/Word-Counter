@@ -16,7 +16,7 @@ This application provides an efficient solution for counting words in text, feat
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/word-counter.git
+git clone https://github.com/Sanju/word-counter.git
 cd word-counter
 ```
 
@@ -40,15 +40,16 @@ python app.py
 
 ## Project Structure
 ```
-word-counter/
-├── app.py              # Application core
-├── requirements.txt    # Dependencies
-├── LICENSE            # MIT License
-├── static/            # Static assets
-│   ├── style.css      # Styling
-│   └── script.js      # Client-side logic
-└── templates/         # HTML templates
-    └── index.html     # Main interface
+.
+├── app.py                # Flask application
+├── static/              # Static assets
+│   ├── style.css        # Application styles
+│   └── script.js        # Client-side JavaScript
+├── templates/           # HTML templates
+│   └── index.html       # Main application page
+├── requirements.txt     # Python dependencies
+├── LICENSE             # MIT License
+└── README.md           # Project documentation
 ```
 
 ## Technology Stack
